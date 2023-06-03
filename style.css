@@ -1,0 +1,20 @@
+* {
+    --main-background: #AEC3B0;
+    --notepad-yellow: #fadb6f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: var(--main-background);
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
