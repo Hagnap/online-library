@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Local Online Library</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <div id="container">
@@ -18,10 +18,38 @@
             </div>
 
             <div id="form-section">
-                <button>Add Book</button>
+                <button id="add-book-btn">Add Book</button>
 
-                <div id="notepad-form">
-                    <p>form</p>
+                <div class="form-container">
+                    <form action="" method="post">
+                        <legend>New Book Entry Form</legend>
+    
+                        <div class="form-item">
+                            <label for="">Title</label>
+                            <input type="text">
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="">Author</label>
+                            <input type="text">
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="">Pages</label>
+                            <input type="number">
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="">Have Read</label>
+                            <input type="checkbox">
+                        </div>
+    
+    
+                        <div id="form-buttons">
+                            <button>Submit Book</button>
+                            <button>Cancel</button>
+                        </div>
+                    </form>
                 </div>
             </div>
 
