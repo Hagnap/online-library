@@ -34,7 +34,7 @@ button:hover {
 
 #grid {
     width: 100vw;
-    height: 50vh;
+    height: 75vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
@@ -46,6 +46,35 @@ button:hover {
 
 }
 
+form {
+    border-top: 20px solid black;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    background-color: var(--notepad-yellow);
+    font-size: 20px;
+    height: clamp(250px, 300px, 350px);
+}
+
+input {
+    background-color: var(--notepad-yellow);
+    border: none;
+    border-bottom: 1px solid skyblue;
+}
+
+button {
+    font-weight: 600;
+}
+
+/* Does not work :( */
+input[type=checkbox]{
+    background-color: var(--notepad-yellow);
+}
+
+legend {
+    text-align: center;
+    margin: 16px 8px;
+}
+
 #form-section {
     grid-column: 2 / 3;
 
@@ -53,7 +82,7 @@ button:hover {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 48px;
+    gap: 48px 0px;
 }
 
 #form-section > button {
@@ -65,7 +94,25 @@ button:hover {
     padding: 8px;
 }
 
+.form-control-buttons,
+.form-item {
+    margin: 24px 8px;
+}
 
+#checkbox {
+    border-bottom: 0px solid var(--notepad-yellow);
+}
+
+#form-control-buttons {
+
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#form-control-buttons button {
+    font-size: 16px;
+}
 
 #extra-space-section {
     grid-column: 3 / 4;
