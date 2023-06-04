@@ -37,6 +37,12 @@ function addBook() {
     bookItem.setAttribute("class", "book-item");
     bookItem.setAttribute("data-index", library.length);
 
+    var bookData = document.createElement("div");
+    bookData.setAttribute("class", "book-data");
+
+    var bookButtons = document.createElement("div");
+    bookButtons.setAttribute("class", "book-buttons");
+
     var bookTitle = document.createElement("p");
     bookTitle.textContent = book.title;
 
@@ -44,7 +50,7 @@ function addBook() {
     bookAuthor.textContent = book.author;
 
     var bookPages = document.createElement("p");
-    bookPages.textContent = book.pages;
+    bookPages.textContent = `${book.pages} Pages`;
 
     var bookIsRead = document.createElement("p");
     bookIsRead.textContent = book.isRead;
@@ -84,13 +90,15 @@ function addBook() {
     });
 
 
-    bookItem.appendChild(bookTitle);
-    bookItem.appendChild(bookAuthor);    
-    bookItem.appendChild(bookPages);    
-    bookItem.appendChild(bookIsRead);     
-    bookItem.appendChild(toggleIsReadBtn);   
-    bookItem.appendChild(removeBtn);  
+    bookData.appendChild(bookTitle);
+    bookData.appendChild(bookAuthor);    
+    bookData.appendChild(bookPages);        
+    bookButtons.appendChild(toggleIsReadBtn);   
+    bookButtons.appendChild(removeBtn);  
     
+    bookItem.appendChild(bookData);
+    bookItem.appendChild(bookButtons);
+
     booksSection.append(bookItem);
 
     library.push(book);

@@ -108,9 +108,13 @@ legend {
     background-color: #FAF4D3;
 
     justify-self: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.book-item > p {
+.book-item p {
     word-break: break-all;
     white-space: normal;
 }
