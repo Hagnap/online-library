@@ -75,14 +75,18 @@ input {
     background-color: var(--notepad-yellow);
     border: none;
     border-bottom: 1px solid skyblue;
+    width: 100%;
 }
 
 button {
     font-weight: 600;
 }
 
-/* Does not work :( */
+
 input[type=checkbox]{
+
+    width: auto;
+    /* Does not work :( */
     background-color: var(--notepad-yellow);
 }
 
