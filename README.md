@@ -24,7 +24,7 @@ JavaScript File Organization
 
 ## Known Issues
 Form Validation
-  * When submitting a form it validates input and refreshes the page but I don't want the page to refresh page as I want to keep all of the inputs to create & display books that the user has added to their library. So at the moment when the user "submits" a form what happens is that I use the data to create a JS object and then reset the form so it acts like data was submitted but it was just stored in an object. The issue? The user can submit empty input fields. Not a major issue but not something I want the user to do. The **potential** solution? Add custom validation to the inputs via JS. Buckle up because this JS file is gonna get a little more cluttered :')
+  * When submitting a form it validates input and refreshes the page but I don't want the page to refresh page as I want to keep all of the inputs to create & display books that the user has added to their library. So at the moment when the user "submits" a form what happens is that I use the data to create a JS object and then reset the form so it acts like data was submitted but it was just stored in an object. The issue? The user can submit empty input fields. Not a major issue but not something I want the user to do. I tried to add custom validation but then I realized if the form isn't submitted there is no validation. So this will remain a known issue for now until I learn how to input a way to store the inputted data and then make the form actually submit.
 
 ## Reference/Guide
 This website was created following the Odin Project. You can find the reference [here](https://www.theodinproject.com/lessons/node-path-javascript-library).

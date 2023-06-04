@@ -2,6 +2,7 @@
 const addBookBtn = document.querySelector("#add-book-btn");
 const submitFormBtn = document.querySelector("#submit-btn");
 const cancelFormBtn = document.querySelector("#cancel-btn");
+const booktitleInput = document.querySelector("#book-title");
 
 const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
@@ -11,6 +12,19 @@ let displayForm = false;
 let library = [];
 
 /* Util functions */
+function validate() {
+    if(booktitleInput.validity.valueMissing) {
+        console.log(booktitleInput);
+        booktitleInput.setCustomValidity("Can't leave blank");
+    }
+    else {
+        booktitleInput.setCustomValidity("");
+    }
+
+    booktitleInput.reportValidity();
+    
+}
+
 function hideForm() {
     formContainer.style.display = "none";
     form.reset();
@@ -129,11 +143,19 @@ submitFormBtn.addEventListener("click", (event) => {
     // Use form data to create book object & Add it to the library
     addBook();
 
-    // hide & reset form after adding book to library
+    // Validate input
+    validate();
+
+    // Hide & reset form after adding book to library
     hideForm();
 
 });
 
+
+
+booktitleInput.addEventListener("input", (event) => {
+    
+});
 
 
 /* Book Code */
