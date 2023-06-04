@@ -5,6 +5,7 @@ const cancelFormBtn = document.querySelector("#cancel-btn");
 
 const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
+const booksSection = document.querySelector("#books-section");
 
 let displayForm = false;
 let library = [];
@@ -19,6 +20,44 @@ function hideForm() {
 function showForm() {
     formContainer.style.display = "flex"
     displayForm = true;
+}
+
+function addBook() {
+    
+    // Create obj, update webpage, and add book to library
+    var book = new Book(
+        this.title = document.querySelector(".form-item #book-title").value,
+        this.author = document.querySelector(".form-item #book-author").value,
+        this.pages = document.querySelector(".form-item #book-pages").value,
+        this.isRead = document.querySelector(".form-item #book-isRead").checked ? true : false,
+    );
+
+    var bookItem = document.createElement("div");
+    bookItem.setAttribute("class", "book-item");
+
+    var bookTitle = document.createElement("p");
+    bookTitle.textContent = book.title;
+
+    var bookAuthor = document.createElement("p");
+    bookAuthor.textContent = book.author;
+
+    var bookPages = document.createElement("p");
+    bookPages.textContent = book.pages;
+
+    var bookIsRead = document.createElement("p");
+    bookIsRead.textContent = book.isRead;
+
+
+    bookItem.appendChild(bookTitle);
+    bookItem.appendChild(bookAuthor);    
+    bookItem.appendChild(bookPages);    
+    bookItem.appendChild(bookIsRead);    
+    
+
+    console.log(booksSection);
+    booksSection.append(bookItem);
+
+    library.push(book);
 }
 
 /* Add EventListeners */
@@ -39,19 +78,14 @@ cancelFormBtn.addEventListener("click", (event) => {
 submitFormBtn.addEventListener("click", (event) => {
 
     // Use form data to create book object & Add it to the library
-    var book = new Book(
-        this.title = document.querySelector(".form-item #book-title").value,
-        this.author = document.querySelector(".form-item #book-author").value,
-        this.pages = document.querySelector(".form-item #book-pages").value,
-        this.isRead = document.querySelector(".form-item #book-isRead").checked ? true : false,
-    );
-
-    library.push(book);
+    addBook();
 
     // hide & reset form after adding book to library
     hideForm();
 
 });
+
+
 
 /* Book Code */
 function Book(title, author, pages, isRead) {
