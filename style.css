@@ -4,6 +4,22 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+/* 
+    Hides arrow on pages input 
+    Reference: https://www.w3schools.com/howto/howto_css_hide_arrow_number.asp
+*/
+/* Works for: Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Works for: Firefox */
+input[type=number] {
+  appearance: textfield;
+}
+
 body {
     background-color: var(--main-background);
 }
