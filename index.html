@@ -21,29 +21,29 @@
                 <button id="add-book-btn">Add Book</button>
 
                 <div class="form-container">
-                    <form action="" method="post" onsubmit="return false">
+                    <form action="" method="post">
                         <legend>New Book Entry Form</legend>
     
                         <div class="form-item">
-                            <input type="text" placeholder="Title" required>
+                            <input id="book-title" type="text" placeholder="Title" required>
                         </div>
     
                         <div class="form-item">
-                            <input type="text" placeholder="Author" required>
+                            <input id="book-author" type="text" placeholder="Author" required>
                         </div>
     
                         <div class="form-item">
-                            <input type="number" placeholder="# of Pages" required>
+                            <input id="book-pages" type="number" placeholder="# of Pages" required>
                         </div>
     
-                        <div id="checkbox" class="form-item">
+                        <div class="form-item">
                             <label for="">Have Read</label>
-                            <input type="checkbox">
+                            <input id="book-isRead" type="checkbox">
                         </div>
     
     
                         <div id="form-control-buttons">
-                            <button id="submit-btn" type="submit">Submit Book</button>
+                            <button id="submit-btn" type="button">Submit Book</button>
                             <button id="cancel-btn" type="button">Cancel</button>
                         </div>
                     </form>

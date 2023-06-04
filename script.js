@@ -36,6 +36,23 @@ cancelFormBtn.addEventListener("click", (event) => {
     hideForm();
 });
 
+submitFormBtn.addEventListener("click", (event) => {
+
+    // Use form data to create book object & Add it to the library
+    var book = new Book(
+        this.title = document.querySelector(".form-item #book-title").value,
+        this.author = document.querySelector(".form-item #book-author").value,
+        this.pages = document.querySelector(".form-item #book-pages").value,
+        this.isRead = document.querySelector(".form-item #book-isRead").checked ? true : false,
+    );
+
+    library.push(book);
+
+    // hide & reset form after adding book to library
+    hideForm();
+
+});
+
 /* Book Code */
 function Book(title, author, pages, isRead) {
     this.title = title;

@@ -115,7 +115,7 @@ legend {
     margin: 24px 8px;
 }
 
-#checkbox {
+#book-isRead {
     border-bottom: 0px solid var(--notepad-yellow);
 }
 
