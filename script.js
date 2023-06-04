@@ -2,7 +2,6 @@
 const addBookBtn = document.querySelector("#add-book-btn");
 const submitFormBtn = document.querySelector("#submit-btn");
 const cancelFormBtn = document.querySelector("#cancel-btn");
-const toggleReadBtn = document.querySelector("#toggle-is-read-btn");
 
 const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
@@ -82,11 +81,15 @@ function addBook() {
 
     });
 
+
+    var removeIndex = bookItem.getAttribute("data-index");
     var removeBtn = document.createElement("button");
     removeBtn.setAttribute("id", "remove-btn");
     removeBtn.textContent = "Remove Book";
     removeBtn.addEventListener("click", (event) => {
 
+        library.splice(removeIndex, 1);
+        booksSection.removeChild(bookItem);
     });
 
 
