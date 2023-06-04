@@ -1,4 +1,4 @@
-/* Store DOM element references */
+/* Store DOM element references & Declare needed variables */
 const addBookBtn = document.querySelector("#add-book-btn");
 const submitFormBtn = document.querySelector("#submit-btn");
 const cancelFormBtn = document.querySelector("#cancel-btn");
@@ -7,6 +7,7 @@ const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
 
 let displayForm = false;
+let library = [];
 
 /* Util functions */
 function hideForm() {
@@ -29,12 +30,20 @@ addBookBtn.addEventListener("click", (event) => {
     else {
         hideForm();
     }
-
-    console.log("Click!");
 });
 
 cancelFormBtn.addEventListener("click", (event) => {
-
-
-    formContainer.style.display = "none";
+    hideForm();
 });
+
+/* Book Code */
+function Book(title, author, pages, isRead) {
+    this.title = title;
+    this.author = author;       
+    this.pages = pages;
+    this.isRead = isRead;
+
+    this.info = function() {
+        return `${this.title} by ${this.author} has ${this.pages} pages and ${this.isRead ? "has" : "has not"} been read.`;
+    }
+}
