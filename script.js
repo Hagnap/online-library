@@ -2,6 +2,7 @@
 const addBookBtn = document.querySelector("#add-book-btn");
 const submitFormBtn = document.querySelector("#submit-btn");
 const cancelFormBtn = document.querySelector("#cancel-btn");
+const toggleReadBtn = document.querySelector("#toggle-is-read-btn");
 
 const formContainer = document.querySelector(".form-container");
 const form = document.querySelector("form");
@@ -59,9 +60,28 @@ function addBook() {
         toggleIsReadBtn.textContent = "Not Read";
     }
 
+    toggleIsReadBtn.addEventListener("click", (event) => {
+
+        // If read -> Make unread & Vice versa
+        if(book.isRead){
+            toggleIsReadBtn.style.backgroundColor = "#A63446";
+            toggleIsReadBtn.textContent = "Not Read";
+            book.isRead = false;
+        }
+        else {
+            toggleIsReadBtn.style.backgroundColor = "#AEC3B0";
+            toggleIsReadBtn.textContent = "Read";
+            book.isRead = true;
+        }
+
+    });
+
     var removeBtn = document.createElement("button");
     removeBtn.setAttribute("id", "remove-btn");
     removeBtn.textContent = "Remove Book";
+    removeBtn.addEventListener("click", (event) => {
+
+    });
 
 
     bookItem.appendChild(bookTitle);
@@ -75,6 +95,8 @@ function addBook() {
 
     library.push(book);
 }
+
+
 
 /* Add EventListeners */
 addBookBtn.addEventListener("click", (event) => {
