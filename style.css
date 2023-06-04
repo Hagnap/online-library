@@ -92,14 +92,35 @@ legend {
 
 #books-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(auto-fill, 1fr);
+    grid-template-columns: repeat(3, minmax(200px, 300px));
+    grid-template-rows: repeat(auto-fill, minmax(150px, 250px));
 }
 
 .book-item {
+
+    font-size: 12px;
     outline: 1px solid black;
+    height: clamp(150px, 200px, 250px);
+    width: clamp(75px, 125px, 150px);
+
+    border-left: 5px solid #A8A48C;
+    border-radius: 5px;
+    background-color: #FAF4D3;
 }
 
+.book-item > p {
+    word-break: break-all;
+    white-space: normal;
+}
+
+.book-item button {
+    
+    margin: 8px auto;
+    display: flex;
+    justify-self: center;
+    
+
+}
 #form-section {
     grid-column: 2 / 3;
 

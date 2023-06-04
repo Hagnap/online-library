@@ -34,6 +34,7 @@ function addBook() {
 
     var bookItem = document.createElement("div");
     bookItem.setAttribute("class", "book-item");
+    bookItem.setAttribute("data-index", library.length);
 
     var bookTitle = document.createElement("p");
     bookTitle.textContent = book.title;
@@ -47,14 +48,29 @@ function addBook() {
     var bookIsRead = document.createElement("p");
     bookIsRead.textContent = book.isRead;
 
+    var toggleIsReadBtn = document.createElement("button");
+    toggleIsReadBtn.setAttribute("id", "toggle-is-read-btn")
+    if(book.isRead){
+        toggleIsReadBtn.style.backgroundColor = "#AEC3B0";
+        toggleIsReadBtn.textContent = "Read";
+    }
+    else {
+        toggleIsReadBtn.style.backgroundColor = "#A63446";
+        toggleIsReadBtn.textContent = "Not Read";
+    }
+
+    var removeBtn = document.createElement("button");
+    removeBtn.setAttribute("id", "remove-btn");
+    removeBtn.textContent = "Remove Book";
+
 
     bookItem.appendChild(bookTitle);
     bookItem.appendChild(bookAuthor);    
     bookItem.appendChild(bookPages);    
-    bookItem.appendChild(bookIsRead);    
+    bookItem.appendChild(bookIsRead);     
+    bookItem.appendChild(toggleIsReadBtn);   
+    bookItem.appendChild(removeBtn);  
     
-
-    console.log(booksSection);
     booksSection.append(bookItem);
 
     library.push(book);
